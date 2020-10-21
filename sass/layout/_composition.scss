@@ -1,0 +1,296 @@
+.composition{
+    background: $color-black-light;
+    font-size: 1.2rem;
+    line-height: 1.45;
+    display: flex;
+    flex-wrap: wrap;
+
+    &-heading{
+        @include heading2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 5rem;
+    }
+
+    &-main{
+        flex: 1 1 80%;
+        padding: 5% 5% 10% 5%;
+        min-height: 210vh;
+
+        &--inside{
+            display: grid;
+            height: 100%;
+            grid-template-rows: repeat(6, 1fr);
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 2.5rem;
+        }
+    }
+
+    &-item{
+        //background: #505050;
+        color: $color-black;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-blend-mode: multiply;
+        color: $color-white;
+        background-size: cover;
+        background-position: center center;
+        transition: all ease-in-out .7s;
+        position: relative;
+        font-size: 4rem;
+        box-shadow: 0 1.5rem 3rem rgba($color-black, .8);
+
+
+        //background shade
+        &::before{
+            content: '';
+            display: block;
+            background: $color-black;
+            opacity: .05;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            transition: all ease .6s;
+            
+        }
+
+        &:hover::before{
+            opacity: .8;
+        }
+
+        //animation
+        .offer{
+            position: absolute;
+            transform: translate(0, 200%);
+            opacity: 0;
+            transition: all .5s;
+
+            &:hover{
+                color:$color-blue-naval;
+            }
+        
+        }
+        
+        &:hover .offer{
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .spin{
+            position: absolute;
+            opacity: 0;
+            transition: all 1.2s;
+        
+            &:hover{
+                color:$color-blue-naval;
+            }
+        }
+        
+        &:hover .spin{
+            opacity: 1;
+        }
+        /////////////////
+    
+        &:hover{
+            cursor: pointer;
+        }
+
+        &.small{
+            grid-row: span 1;
+            grid-column: span 1;
+        }
+
+        &.medium{
+            grid-row: span 2;
+            grid-column: span 2;
+        }
+
+        &.large{
+            grid-row: span 3;
+            grid-column: span 3;
+        }
+
+        &.tall{
+            grid-row: span 3;
+            grid-column: span 2;
+        }
+
+        &.wide{
+            grid-row: span 2;
+            grid-column: span 3;
+        }
+    } 
+}
+
+.one{
+    background-image: url(../img/boxin.jpg);
+}
+
+.two{
+    background-image: url(../img/barbell-m.jpg);  
+}
+
+.three{
+    background-image: url(../img/yoga-l.jpg);
+}
+
+.four{
+    background-image: url(../img/spin-m.jpg);
+}
+
+.five{
+    background-image: url(../img/pullup.jpg);
+}
+
+.six{
+    background-image: url(../img/rope.jpg);
+}
+
+
+@media (max-width:1100px){
+    .composition{
+
+        &-heading{
+            font-size: 2.5rem;
+            margin-top: 5%;
+        }
+
+        &-main{
+            padding: 2%;
+        }
+
+        &-item{
+            font-size: 2.5rem;
+        }
+    }
+
+    .three{
+        background-position: center right;
+    }
+
+    .six{
+        background-position: center left;
+    }
+}
+
+@media (max-width:1100px) and (min-width:501px){
+    
+    .composition{
+        padding-bottom: 15rem;
+
+        &-main--inside{
+            grid-template-rows: repeat(10, 1fr);
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+
+        &-item{
+           
+            .offer{
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .spin{
+                opacity: 1;
+            }
+
+            &.small{
+                grid-row: span 3;
+                grid-column: span 8;
+            }
+
+            &.medium{
+                grid-row: span 2;
+                grid-column: span 3;
+            }
+
+            &.large{
+                grid-row: span 4;
+                grid-column: span 5;
+            }
+
+            &.tall{
+                grid-row: span 4;
+                grid-column: span 4;
+            }
+
+            &.wide{
+                grid-row: span 4;
+                grid-column: span 4;
+            }
+        }
+    }
+
+    .five{
+        background-position: center top;
+    }
+}
+
+
+@media (max-width:500px){
+    
+    .composition{
+        padding-bottom: 20rem;
+
+        &-main--inside{
+            grid-gap: .5;
+        }
+
+        &-heading{
+            font-size: 1.6rem;
+        }
+
+        &-item{
+
+            .offer{
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .spin{
+                opacity: 1;
+            }
+
+            &.small{
+                grid-row: span 1;
+                grid-column: span 5;
+            }
+
+            &.medium{
+                grid-row: span 1;
+                grid-column: span 5;
+            }
+
+            &.large{
+                grid-row: span 1;
+                grid-column: span 5;
+            }
+
+            &.tall{
+                grid-row: span 1;
+                grid-column: span 5;
+            }
+
+            &.wide{
+                grid-row: span 1;
+                grid-column: span 5;
+            }
+        }
+
+        .five{
+            background-position: top center;
+        }
+    }
+}
+
+
+
+
+
+

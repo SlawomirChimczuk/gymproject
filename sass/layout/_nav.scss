@@ -1,0 +1,91 @@
+nav{
+	position: fixed;
+	top: 5rem;
+	right: 5rem;
+	z-index: 2;
+
+	.sidenav {
+		@include flexCenter;
+		height: 100%;
+		width: 0;
+		position: fixed;
+		z-index: 10;
+		top: 0;
+		right: 0;
+		background-color: rgba($color-blue-night, .8);
+		overflow-x: hidden;
+		transition: 0.5s;
+		text-transform: uppercase;
+		font-weight: 700;
+		
+
+		a{
+			padding: 1.5rem;
+			text-decoration: none;
+			font-size: 3.2rem;
+			color: $color-white;
+			background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-blue-naval 50%); 
+			background-size: 240%;
+			transition: all .5s;
+
+			&:hover,
+			&:active {
+				background-position: 100%; 
+			}
+		}
+
+		.closebtn {
+			position: absolute;
+			top: 4.5rem;
+			right: 4.7rem;
+			font-size: 2rem; 
+			background-color: white;
+			color: $color-blue-naval;
+			padding: 0rem 2rem;
+			border-radius: 2px;
+
+			&:hover {
+				color: $color-white;
+				background-color: $color-blue-naval
+			}
+		}
+	}
+
+	.hamburger-bg{
+		padding: 1.2rem 1rem;
+		background-color: $color-white;
+		border-radius: 2px;
+		cursor: pointer;
+		z-index: 5;
+	}
+
+	.hamburger,
+	.hamburger::before,
+	.hamburger::after
+	{
+		content: '';
+		display: block;
+		background: $color-blue-naval;
+		height: 3px;
+		width: 1.75em;
+		border-radius: 3px;
+		transition: all ease-in-out 500ms;
+	}
+
+	.hamburger::before{
+		transform: translateY(-6px);
+	}
+
+	.hamburger::after{
+		transform: translateY(3px);
+	}
+}
+
+
+
+
+
+
+
+
+

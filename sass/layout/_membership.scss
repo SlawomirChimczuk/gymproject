@@ -1,0 +1,202 @@
+.membership-section{
+    width: 100%;
+    @include flexCenter;
+    background-color: $color-blue-ship;
+    padding: 20rem 0 10rem 0;
+    
+
+    &--heading{
+        @include heading2;
+        margin: -15rem 0 5rem 0;
+    }
+}
+    
+
+
+.card{
+    perspective: 130rem;
+    -moz-perspective: 150rem;
+    width: 40%;
+    position: relative;
+    height: 50rem;
+    margin-top: 3rem;
+
+    &__side{
+        height: 50rem;
+        transition: all 1.2s;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;
+        overflow: hidden;
+        border-radius: 3px;
+        box-shadow: 0 1.5rem 3rem rgba($color-black, .4);
+
+        &--front{
+            background-color: $color-white;
+            color: $color-black;
+        }
+
+        &--back{
+            transform: rotateY(180deg);
+
+            &-1{
+                background-color: $color-blue-naval;
+            }
+
+            &-2{
+                background-color: $color-red;
+            }
+
+            &-3{
+                background-color: $color-orange;
+            }
+        }
+    }
+
+    &:hover &__side--front{
+        transform: rotateY(-180deg);
+        cursor: pointer;
+        box-shadow: -1rem 1.5rem 3rem rgba($color-black, .9);
+    }
+
+    &:hover &__side--back{
+        transform: rotateY(0);
+        cursor: pointer;
+        box-shadow: -1rem 1.5rem 3rem rgba($color-black, .9);
+    }     
+    
+
+    //front page
+    &__pic{
+        background-size: cover;
+        background-position: center;
+        height: 24rem;
+        background-blend-mode: screen;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+
+        &-1{
+            background-image: linear-gradient(to right top, $color-black-light, $color-blue-naval), url(../img/cardio.jpg);
+        } 
+
+        &-2{
+            background-image: linear-gradient(to right top, $color-black-light, $color-red), url(../img/cardio.jpg);
+        } 
+
+        &-3{
+            background-image: linear-gradient(to right top, $color-black-light, $color-orange), url(../img/cardio.jpg);
+        } 
+
+    }
+
+    &__head{
+        font-size: 2.4rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: right;
+        color: $color-white;
+        position: absolute;
+        top: 12rem;
+        right: 2rem;
+        width: 60%;
+
+        &-span{
+
+            &--1{
+                background-image: linear-gradient(to right bottom ,rgba($color-blue-naval, .1),rgba($color-blue-naval, .95));
+            }
+
+            &--2{
+                background-image: linear-gradient(to right bottom ,rgba($color-red, .1),rgba($color-red, .95));
+            }
+
+            &--3{
+                background-image: linear-gradient(to right bottom ,rgba($color-orange, .1),rgba($color-orange, .95));
+            }
+        }
+    }
+
+    &__info{
+        padding: 3rem;
+        color: $color-blue-night;
+
+        ul {
+            list-style: none;
+            width: 80%;
+            margin: 0 auto;
+
+            li {
+                text-align: center;
+                font-size: 1.5rem;
+                padding: 1rem;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid $color-blue-night;
+                }
+            }
+        }
+    }
+
+    //Back Card
+    &__wrap{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        text-align: center;
+    }
+
+    &__price-cont{
+        text-align: center;
+        color: $color-white;
+        margin-bottom: 4rem;
+
+        &--1{
+            font-size: 8rem;
+        }
+    
+        &--2{
+            font-size: 3rem;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+    }
+}
+
+
+
+
+@media (max-width:850px){
+    .card{
+        width: 50%;
+    }
+}
+
+@media (max-width:650px){
+    .membership-section--heading{
+        font-size: 2rem;
+    }
+
+    .card{
+        width: 60%;
+    }
+}
+
+@media (max-width:500px){
+    .card{
+        width: 70%;
+    }
+}
+
+@media (max-width:400px){
+    .membership-section--heading{
+        font-size: 1.6rem;
+    }
+
+    .card{
+        width: 90%;
+    }
+}

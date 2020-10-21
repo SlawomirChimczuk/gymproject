@@ -1,0 +1,106 @@
+.modal{
+    color: $color-white;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba($color-white, .6);
+
+    &-content{
+        
+        &--box{
+            @include modalBg;
+            background-image: linear-gradient(to left bottom, rgba($color-blue-night, .4), rgba($color-black, .4)), url(../img/boxin.jpg);
+        }
+
+        &--weight{
+            @include modalBg;
+            background-image: linear-gradient(to left bottom, rgba($color-blue-night, .4), rgba($color-black, .4)), url(../img/barbell.jpg);
+        }
+    }
+
+    &-header, &-footer{
+        background: $color-blue-night;
+        padding: 1.5rem;
+    }
+
+    &-body{
+
+        h3{
+            padding: 3rem 5rem;
+            font-size: 2.4rem;
+            text-align: center;
+        }
+
+        p{
+            padding: 2rem 16rem 6rem 16rem;
+        }
+    }
+
+    &-footer{
+        text-align: center;
+        transition: all .3s;
+        
+        &:hover{
+            color: $color-grey-dark;
+            cursor: pointer;
+        }
+    }
+}
+
+.closeBtnBox, .closeBtnWeight{
+    float: right;
+    font-size: 4rem;
+    transition: all .3s;
+
+    &:hover,
+    &:focus{
+        color: $color-grey-dark;
+        cursor: pointer;
+        text-decoration: none;
+    }
+}
+
+
+
+@media (max-width:900px){
+
+    .modal{
+
+        &-body{
+
+            h3{
+                padding: 1.5rem 2.5rem;
+                font-size: 2rem;
+                
+            }
+    
+            p{
+                padding: 2rem 10rem 4rem 10rem;
+            }
+        }
+    }
+}
+
+@media (max-width:600px){
+    .modal{
+
+        &-body{
+
+            h3{
+                padding: 1rem 2rem;
+                font-size: 1.6rem
+            }
+            
+            p{
+                padding: 1rem;
+                font-size: 1.4rem
+            }
+        }
+    }
+}
+

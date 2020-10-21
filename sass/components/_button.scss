@@ -1,0 +1,125 @@
+.btn{
+    &,
+    &:link,
+    &:visited {
+        margin-top: 5rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: .3rem 1.5rem;
+        display: inline-block;
+        border-radius: .2rem;
+        position: relative;
+        border: none;
+        cursor: pointer;
+        transition: all .3s;
+
+    } 
+
+    &--size{
+        font-size: 1.2rem;
+    }
+
+    &--animation{
+        animation: moveInBottom .5s ease-out 1s;
+        animation-fill-mode: backwards;
+    }
+
+    &--bg{
+        background-color: $color-white;
+        color: $color-blue-naval;
+    }
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow:0 .8rem 1.4rem rgba($color-grey-dark, .2);
+    
+        &::after{
+        transform: scaleY(1.3) scaleX(1.1);
+        opacity: 0;
+        }
+    }
+
+    &:active{
+        transform: translateY(-1px);
+        box-shadow:0 .4rem .7rem rgba($color-grey-dark, .2);
+    }
+
+    &::after{
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: .2rem;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        transition: all .3s;
+    }
+
+    &--bg::after{
+        background-color: $color-white;
+    }
+
+    
+}
+
+.btn--card{
+
+    &-1{
+        color: $color-blue-naval;
+        font-size: 3rem;
+    }
+
+    &-2{
+        color: $color-red;
+        font-size: 3rem;
+    }
+
+    &-3{
+        color: $color-orange;
+        font-size: 3rem;
+    }
+}
+
+///Form button///
+.button{
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: $color-white;
+    border-radius: 1px;
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    background-color: $color-blue-naval;
+    cursor: pointer;
+    transition: all ease .5s;
+
+    &:hover{
+        background-color: $color-white;
+        color: $color-blue-naval;
+        box-shadow: 0 1rem 1.5rem rgba($color-black, .2);
+    }
+}
+
+
+/////Underline animation
+@media (min-width:900px){
+
+    .heading-primary:hover > .heading-primary--bottom{
+        background-color: $color-blue-naval;
+        height: .5rem;
+        width: 40rem;
+        border-radius: 2px;
+    }
+}
+
+///////////Responsiveness
+
+@media (max-width:700px){
+    .btn{
+        animation: none;
+    }
+}

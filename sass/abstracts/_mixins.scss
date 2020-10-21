@@ -1,0 +1,35 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin heading2{
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: inline-block;
+    background-image: linear-gradient(to right, $color-grey-light-2, $color-grey-dark);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+@mixin modalBg{
+    background-size: cover;
+    background-position: center;
+    background-color: $color-grey-light-2;
+    margin: 20% auto;
+    width: 70%;
+    box-shadow: 0 5px 8px 0 rgba($color-black, .2),0 7px 20px 0 rgba($color-black, .2);
+    animation-name: modalOpen;
+    animation-duration: 2s;
+}
+
+@mixin flexCenter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
